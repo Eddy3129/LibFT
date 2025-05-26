@@ -3,8 +3,8 @@
 
 int	main(void)
 {
-	char	*s1 = "hello";
-	char	*s2 = "world";
-	printf("%s\n", ft_strjoin(s1, s2));
+	char	*s1 = "ahahelloahaha";
+	char	*s2 = "ah";
+	printf("%s\n", ft_strtrim(s1, s2));
 };
 		
