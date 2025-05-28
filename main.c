@@ -1,10 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "libft.h"
 
-int	main(void)
+int main(void)
 {
-	char	*s1 = "ahahelloahaha";
-	char	*s2 = "ah";
-	printf("%s\n", ft_strtrim(s1, s2));
-};
-		
+    char *str = "Hello, World! maka baka da mn you";
+    char **words = ft_split(str, ' ');
+
+    if (words == NULL)
+    {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    int i = 0;
+    while (words[i] != NULL)
+    {
+        printf("%s\n", words[i]);
+        free(words[i]);
+        i++;
+    }
+}
