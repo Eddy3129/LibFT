@@ -72,3 +72,15 @@ char	*ft_itoa(int n)
 	}
 	return (output);
 }
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	printf("%s\n", ft_itoa(-123));
+    printf("%s\n", ft_itoa(-2147483648));
+    printf("%s\n", ft_itoa(2));
+    printf("%s\n", ft_itoa(100000000));
+    printf("%s\n", ft_itoa(101030010));
+}
+*/

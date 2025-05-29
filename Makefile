@@ -26,7 +26,8 @@ SRCS = 	ft_atoi.c \
 		ft_strncmp.c \
 		ft_strtrim.c \
 		ft_split.c \
-		ft_itoa.c
+		ft_itoa.c \
+		ft_strmapi.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
