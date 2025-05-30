@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *str, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	while (*str)
+	while (*s)
 	{
-		write(fd, str, 1);
-		str++;
+		write(fd, s, 1);
+		s++;
 	}
 	write(fd, "\n", 1);
 }

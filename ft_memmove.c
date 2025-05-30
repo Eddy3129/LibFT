@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	unsigned char	*d;
 	unsigned char	*s;
 
-	if (dest == 0 && src == 0)
-		return (dest);
-	d = (unsigned char *)dest;
+	if (dst == 0 && src == 0)
+		return (dst);
+	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
-	if (dest < src)
+	if (dst < src)
 	{
 		while (n > 0)
 		{
@@ -34,7 +34,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		while (n--)
 			*(d + n) = *(s + n);
 	}
-	return (dest);
+	return (dst);
 }
 /*
 #include <stdio.h>
@@ -44,7 +44,7 @@ int main(void)
 {
     char buffer[50];
     char src[] = "abcdefghijklmnopqrstuvwxyz";
-    char dest[50];
+    char dst[50];
 
     printf("Testing ft_memmove:\n");
     printf("----------------------------------------\n");
@@ -52,14 +52,14 @@ int main(void)
     // Test Case 1: Non-overlapping copy
     printf("Test 1: Non-overlapping copy\n");
     strcpy(buffer, src); // Reset buffer
-    ft_memmove(dest, buffer, strlen(buffer) + 1); // Copy entire string
+    ft_memmove(dst, buffer, strlen(buffer) + 1); // Copy entire string
     printf("Source: \"%s\"\n", buffer);
-    printf("Destination: \"%s\"\n", dest);
+    printf("dstination: \"%s\"\n", dst);
     printf("----------------------------------------\n");
 
-    // Test Case 2: Overlapping copy (dest < src)
+    // Test Case 2: Overlapping copy (dst < src)
     // Copy "cdefg" (5 bytes from index 2) to index 0
-    printf("Test 2: Overlapping copy (dest < src)\n");
+    printf("Test 2: Overlapping copy (dst < src)\n");
     strcpy(buffer, src); // Reset buffer to "abcdefghijklmnopqrstuvwxyz"
     printf("Original buffer: \"%s\"\n", buffer);
     ft_memmove(buffer, buffer + 2, 5);
@@ -67,9 +67,9 @@ int main(void)
     printf("Buffer after ft_memmove(buffer, buffer + 2, 5): \"%s\"\n", buffer); 
     printf("----------------------------------------\n");
 
-    // Test Case 3: Overlapping copy (dest > src)
+    // Test Case 3: Overlapping copy (dst > src)
     // Copy "abcde" (5 bytes from index 0) to index 2
-    printf("Test 3: Overlapping copy (dest > src)\n");
+    printf("Test 3: Overlapping copy (dst > src)\n");
     strcpy(buffer, src); // Reset buffer to "abcdefghijklmnopqrstuvwxyz"
     printf("Original buffer: \"%s\"\n", buffer);
     ft_memmove(buffer + 2, buffer, 5); 
@@ -91,9 +91,9 @@ int main(void)
     printf("Buffer after ft_memmove(buffer, buffer, len): \"%s\"\n", buffer); 
     printf("----------------------------------------\n");
 
-    // Test Case 6: Overlapping copy (dest < src), larger size
+    // Test Case 6: Overlapping copy (dst < src), larger size
     // Copy "fghijklm" (8 bytes from index 5) to index 2
-    printf("Test 6: Overlapping copy (dest < src), larger size\n");
+    printf("Test 6: Overlapping copy (dst < src), larger size\n");
     strcpy(buffer, src); // Reset buffer
     printf("Original buffer: \"%s\"\n", buffer);
     ft_memmove(buffer + 2, buffer + 5, 8);
@@ -101,9 +101,9 @@ int main(void)
     printf("ft_memmove(buffer + 2, buffer + 5, 8): \"%s\"\n", buffer); 
     printf("----------------------------------------\n");
 
-    // Test Case 7: Overlapping copy (dest > src), larger size
+    // Test Case 7: Overlapping copy (dst > src), larger size
     // Copy "abcdefgh" (8 bytes from index 0) to index 3
-    printf("Test 7: Overlapping copy (dest > src), larger size\n");
+    printf("Test 7: Overlapping copy (dst > src), larger size\n");
     strcpy(buffer, src); // Reset buffer
     printf("Original buffer: \"%s\"\n", buffer);
     ft_memmove(buffer + 3, buffer, 8);
@@ -111,7 +111,7 @@ int main(void)
     printf("Buffer after ft_memmove(buffer + 3, buffer, 8): \"%s\"\n", buffer); 
     printf("----------------------------------------\n");
 
-    // Test Case 8: NULL pointers with n=0 (should return dest)
+    // Test Case 8: NULL pointers with n=0 (should return dst)
     printf("Test 8: NULL pointers with n=0\n");
     char *null_result = ft_memmove(NULL, NULL, 0);
     printf("ft_memmove(NULL, NULL, 0) returned: %p\n", (void*)null_result);
