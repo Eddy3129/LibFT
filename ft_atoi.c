@@ -19,7 +19,7 @@ int	is_space(char c)
 	return (0);
 }
 
-int	parse_sign(char *str, int *i)
+int	parse_sign(const char *str, int *i)
 {
 	int	sign;
 	int	count;
@@ -38,7 +38,7 @@ int	parse_sign(char *str, int *i)
 	return (sign);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
