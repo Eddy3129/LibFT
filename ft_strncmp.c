@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddlim <eddlim@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 19:23:56 by eddlim            #+#    #+#             */
-/*   Updated: 2025/05/19 19:41:06 by eddlim           ###   ########.fr       */
+/*   Updated: 2025/05/30 15:57:04 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2, int n)
-{
-	int	i;
+#include "libft.h"
 
-	i = 1;
-	while (*s1 && *s2 && *s1 == *s2 && i < n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && i < n)
 	{
-		s1++;
-		s2++;
+		if ((unsigned char) s1[i] != (unsigned char) s2[i])
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 		i++;
 	}
-	return (*s1 - *s2);
+	return (0);
 }
 /*
 #include <stdio.h>
@@ -29,5 +31,5 @@ int	main(void)
 {
 	char	*s1 = "abcdef";
 	char	*s2 = "abczzz";
-	printf("%d", ft_strcmp(s1, s2, 4));
+	printf("%d", ft_strncmp(s1, s2, 4));
 }*/

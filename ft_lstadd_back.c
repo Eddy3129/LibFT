@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:20:12 by marvin            #+#    #+#             */
-/*   Updated: 2025/05/29 23:20:23 by marvin           ###   ########.fr       */
+/*   Updated: 2025/05/30 16:27:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	last = ft_lstlast(*lst);
 	if (!last)
+	{
 		*lst = new;
+		return ;
+	}
 	last->next = new;
 }
