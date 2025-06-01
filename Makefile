@@ -50,7 +50,7 @@ OBJS_MANDATORY = $(SRCS_MANDATORY:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 # Compiler and tools
-CC = gcc
+CC = cc
 AR = ar
 RM = rm -f
 
